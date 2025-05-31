@@ -1,5 +1,16 @@
+html,
 body {
-  transition: background-color 0.5s ease, color 0.5s ease;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  overflow-y: auto;
 }
 
 body {
@@ -413,4 +424,35 @@ body.light-mode section#BibTeX .content {
 
 #mode-toggle:active {
   transform: scale(0.95);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+
+  .container.is-max-desktop {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .column.is-four-fifths {
+    width: 100% !important;
+  }
+
+  .columns,
+  .column {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .video-wrapper {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .content.has-text-justified p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
 }
