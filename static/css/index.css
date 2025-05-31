@@ -1,9 +1,24 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+body {
+  background-color: #101010;
+  color: #ddd;
+  font-family: 'Noto Sans', sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.hero,
+.hero-body,
+.section.hero,
+.hero.is-small,
+.footer {
+  background-color: transparent !important;
+}
 
 .footer .icon-link {
+  
     font-size: 25px;
     color: #000;
 }
@@ -17,7 +32,6 @@ body {
   font-variant: small-caps;
 }
 
-
 .teaser .hero-body {
   padding-top: 0;
   padding-bottom: 3rem;
@@ -27,8 +41,10 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
-
 .publication-title {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.145rem;
 }
 
 .publication-banner {
@@ -133,5 +149,268 @@ body {
   font-size: smaller;
 }
 
+.publication-authors a.plain-link {
+  color: inherit   !important;
+  text-decoration: none    !important;
+  cursor: pointer;
+}
+
+.publication-authors a.plain-link:hover {
+  text-decoration: underline;
+}
+
+.publication-links .link-block {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.container.is-fluid {
+  max-width: 100%!important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
 
+.video-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5rem;
+  overflow: hidden;
+}
+
+.results-video-wrapper {
+  max-width: 1600px;        
+  margin: 0 auto 7rem auto; 
+}
+
+.results-video-wrapper video {
+  width: 100%;             
+  height: auto;            
+  border-radius: 5rem;   
+  display: block;         
+}
+
+.results-video-wrapper:nth-of-type(2) {
+  margin-bottom: 1rem;
+}
+
+.video-wrapper img {
+  width: 50%;
+  height: auto;
+  border-radius: 3rem;
+  display: block;
+  margin: 0 auto; 
+}
+
+.caption-text {
+  margin-top: 1.5rem;
+}
+.caption-text p {
+  text-align: justify;
+  color: #ddd;
+  line-height: 1.6em; 
+}
+
+section.hero .title.is-3 {
+  color: #ffffff !important;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5rem;
+}
+
+.container.is-max-desktop {
+  max-width: 80% !important;
+  padding-left: 1.5rem; 
+  padding-right: 1.5rem;
+}
+
+.section.hero,
+.hero.is-small {
+  margin-bottom: 4rem;
+}
+
+section#BibTeX pre,
+section#BibTeX code {
+  background-color: #101010;  
+  color: #ddd;                  
+  border: none;               
+  padding: 1rem;               
+  border-radius: 0.5rem;       
+  overflow-x: auto;             
+}
+
+section#BibTeX pre code {
+  color: inherit;
+  background: none;
+  font-family: monospace;
+}
+
+.footer {
+  background-color: #101010 !important;
+  color: #ddd !important;
+  padding: 2rem 0;
+}
+
+.footer,
+.footer p,
+.footer a {
+  color: #ddd !important;
+}
+
+.footer .content {
+  font-size: 0.775rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.footer a:hover {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+.footer {
+  border-top: none;
+  box-shadow: none;
+}
+
+
+
+#mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffd600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+#mode-toggle.pressed {
+  transform: scale(0.9);
+}
+
+#mode-icon {
+  font-size: 1.25rem;
+  transition: color 0.3s ease; 
+}
+
+#mode-toggle .fas {
+  font-size: 4rem;
+}
+
+body.light-mode #mode-toggle {
+  background-color: #dddddd !important;
+  color: #333333 !important;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  B) LIGHT-MODE OVERRIDES
+ ────────────────────────────────────────────────────────────────────────────*/
+body.light-mode {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.light-mode .publication-authors.subtitle-info {
+  color: #555 !important;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode p,
+body.light-mode li,
+body.light-mode pre,
+body.light-mode code {
+  color: #000000 !important;
+}
+
+body.light-mode .hero,
+body.light-mode .hero-body,
+body.light-mode .section.hero,
+body.light-mode .hero.is-small,
+body.light-mode .footer {
+  background-color: transparent !important;
+}
+
+body.light-mode a {
+  color: #000000 !important;
+}
+
+body.light-mode a.name-link {
+  color: #4286f4 !important;
+}
+
+body.light-mode .subtitle-info {
+  color: #555555 !important;
+}
+
+body.light-mode .button.is-dark {
+  background-color: #272727 !important;
+  color: #ffffff !important;
+}
+
+body.light-mode .button.is-dark .icon,
+body.light-mode .button.is-dark .icon .fas {
+  color: #ffffff !important;
+}
+
+body.light-mode section.hero .title.is-3 {
+  color: #000000 !important;
+}
+
+body.light-mode .pipeline-caption {
+  color: #000 !important;
+}
+
+body.light-mode section#BibTeX pre {
+
+  background-color: #ffffff !important;
+  color: #000000       !important;
+  border: 1px solid #dddddd !important;
+  padding: 1rem        !important;
+  border-radius: 0.5rem!important;
+  white-space: pre-wrap !important;   
+  word-break: break-word!important;  
+  max-height: none      !important;   
+  overflow-y: visible   !important;  
+}
+
+body.light-mode section#BibTeX pre code {
+  background: none       !important;
+  color: inherit         !important;
+}
+
+body.light-mode section#BibTeX,
+body.light-mode section#BibTeX .container,
+body.light-mode section#BibTeX .content {
+  overflow: visible !important;
+}
+
+#mode-toggle:active {
+  transform: scale(0.95);
+}

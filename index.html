@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>Thesis</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -36,82 +36,92 @@
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-tva0f+Km2HIRoWWI/HLoMleSmnWtIZ3/p3xF/qPwP9etekxrGQNXA8uEl3q12Y5tEJYAnab1P7p3DQmRF8wRAg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  />
 </head>
 <body>
 
+  <button id="mode-toggle" aria-label="Switch dark/light mode">
+    <span id="mode-icon" class="fas fa-sun"></span>
+  </button>
 
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Emotion-Driven Editing of GaussianAvatars</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                <a href="https://abhinavutkarsh.com/" target="_blank" class="name-link">Abhinav Utkarsh</a></span>
                   </span>
                   </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  <div class="is-size-5 publication-authors subtitle-info">
+                    <span class="author-block">
+                      Master’s Thesis <br />
+                      <a href="https://www.niessnerlab.org/" target="_blank" class="plain-link">
+                        Visual Computing & Artificial Intelligence Lab
+                      </a><br />
+                      <a href="https://www.tum.de/" target="_blank" class="plain-link">
+                        Technical University of Munich (TUM)
+                      </a>
+                    </span>
                   </div>
-
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
+                         <!-- PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="static/pdfs/Emotion-Driven Editing of Gaussian Avatars.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
-                        <span>Paper</span>
+                        <span>Thesis</span>
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://abhinavutkarsh.com/" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (Coming Soon)</span>
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
+                <!-- Dataset PDF link -->
+                    <span class="link-block">
+                      <a href="https://github.com/tobias-kirschstein/nersemble-data.git" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
+
+                <!-- Presentation -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="static/pdfs/Thesis Presentation.pptx" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <i class="fas fa-file-powerpoint"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>Presentation</span>
                 </a>
               </span>
             </div>
@@ -123,166 +133,234 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser video -->
 <section class="hero teaser">
-  <div class="container is-max-desktop">
+  <div class="container is-fluid">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+      <div class="video-wrapper"> 
+        <video
+          poster=""
+          id="tree"
+          autoplay
+          controls
+          muted
+          loop
+        >
+          <source
+            src="static/videos/banner_video.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="caption-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            From left to right, the input sequence (neutral)
+            followed by EMO-GA outputs under four target emotions:
+            Happy, Angry, Sad, and Surprised. Despite relying solely
+            on noisy 2-D diffusion edits and no 3-D emotion-labelled
+            dataset, EMO-GA achieves coherent, view-consistent changes
+            in both geometry (e.g., raised brows, denser cheek regions)
+            and texture (e.g., subtle shading around the eyes, shifts
+            in skin tone for anger). This synergy underscores how
+            combining color and geometry optimization captures
+            nuanced expressions—far beyond what simple mesh deformations
+            alone could convey.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
+<!-- End teaser video -->
 
+<!-- Thesis abstract -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            High-fidelity 3-D head avatars are becoming indispensable for emerging spatial computing devices, such as Apple’s Vision Pro, where virtual “spatial persona” calls and other immersive experiences demand natural, expressive facial renderings. Yet, the challenge of creating avatars that convincingly display a broad range of emotions—complete with texture cues like wrinkles, skin-tone variations, and shadows—remains largely unsolved. Traditional 3D pipelines based on purely geometric blend-shapes or one-shot 2-D editing often omit these subtleties, leading to expressions that look hollow or appear inconsistent when viewed from varying spatial positions or angles.
+          </p>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+          <p>
+            To tackle this gap, we propose <em>Emotion-Driven Editing of Gaussian Avatars (EMO-GA)</em>, a pipeline designed to create expressive and emotionally rich 3D avatars. The process begins by transforming neutral or mildly expressive frames into “pseudo” emotion exemplars via text-prompted diffusion (e.g., UltraEdit), injecting details like deeper cheek contours for happiness or shading shifts for anger. Next, photometric FLAME-based tracking is applied to multi-view data, producing accurate head geometry to which the Gaussian splats are rigged. A baseline Gaussian avatar is then constructed, augmented with a color MLP and patch-based photometric constraints to capture both global shape and fine texture cues. To finalize the pipeline, we optimize the shared FLAME expression offsets and per-Gaussian texture features against the noisy “pseudo” edits generated by diffusion models. This optimization involves a delicate balance: while geometry updates capture the overall structure of the expression, texture adjustments are critical for fine details like shading, lip color, and subtle skin-tone shifts. To avoid over-fitting to diffusion inconsistencies and to maintain spatiotemporal consistency, we use shared expression offsets across frames, coupled with iterative cycles of geometry and texture refinement. By incorporating robust regularization strategies, such as view weighting and patch-based photometric losses, the pipeline ensures that both geometry and texture converge coherently to reflect the desired emotional state without introducing any significant flicker or causing nearly zero identity loss.
+          </p>
+
+          <p>
+            Our results show that geometry alone fails to capture the richness of facial affect; textural refinement is indispensable for natural emotional expressions. EMO-GA integrates these elements into a single, view-consistent representation, eliminating the need for massive labeled 3D emotion corpora. By achieving nuanced expression edits and preserving multi-view fidelity, this pipeline paves the way for more authentic avatar interactions in spatial FaceTime calls, virtual collaboration platforms, and other scenarios where subtle emotional detail truly matters.
+          </p>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End Thesis abstract -->
 
+<!-- Pipeline Overview -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+  <h2 class="title is-3">Pipeline Overview</h2>
+  <figure class="image is-fullwidth" style="margin-top: 1.5rem;">
+    <img
+      class="is-fullwidth"
+      src="static/images/ch4_diagsv_3_5_5.png"
+      alt="EMO-GA pipeline overview"
+    />
+      <figcaption class="pipeline-caption has-text-justified" style="margin-top: 1rem;">
+        Complete EMO-GA pipeline. Phase (a) in lavender (top) produces pseudo-ground-truth images via
+        diffusion-based editing. These are often spatially and temporally inconsistent but carry strong emotional cues.
+        Phase (b) in lilac constructs and renders the Gaussian avatar using FLAME parameters and input sequence. Finally,
+        Phase (c) in coral optimizes both geometry (FLAME expression offsets) and color (per-Gaussian latents) to align
+        the avatar with the noisy, emotion-edited diffusion images as references. For clarity, we illustrate only two views
+        here along the spatial axis, but in practice, we utilize all 15 camera views for Gaussian Avatars, while selecting 10
+        for emotion optimization. Note that Phase (a) is purely a preprocessing stage; gradient flow occurs only between Phases (b) and (c).
+        Please refer to the thesis above for more details.
+        </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Pipeline Overview -->
 
-
-
-<!-- Youtube video -->
+<!-- Results (duplicate of teaser video, but smaller) -->
 <section class="hero is-small is-light">
   <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+    <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <h2 class="title is-3">Results</h2>
+
+          <!-- First video block -->
+          <div class="results-video-wrapper">
+            <video
+              poster=""
+              id="tree-duplicate-1"
+              autoplay
+              controls
+              muted
+              loop
+            >
+              <source
+                src="static/videos/baseline_1.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="caption-text">
+              <p>
+                Baseline comparison: from left to right, the capture displays the neutral input sequence,
+                three 2-D diffusion‐based baselines, a 3-D geometry-only baseline (EMOTE), and our EMO-GA
+                output for the target emotion <em>Angry</em>. The 2-D diffusion methods markedly distort the
+                subject’s identity and disrupt temporal coherence. EMOTE optimizes geometry but lacks texture
+                refinement and therefore fails to reproduce the fine surface details needed to express emotion.
+                In contrast, EMO-GA preserves identity and multi-view consistency while introducing subtle
+                texture cues—such as forehead wrinkles—that clearly convey anger. For more such results,
+                please refer to the presentation above.
+              </p>
+            </div>
           </div>
+          <!-- /First video block -->
+
+          <!-- Second video block -->
+          <div class="results-video-wrapper">
+            <video
+              poster=""
+              id="tree-duplicate-2"
+              autoplay
+              controls
+              muted
+              loop
+            >
+              <source
+                src="static/videos/result_2.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <!-- /Second video block -->
+
+           <!-- Second video block -->
+          <div class="results-video-wrapper">
+            <video
+              poster=""
+              id="tree-duplicate-2"
+              autoplay
+              controls
+              muted
+              loop
+            >
+              <source
+                src="static/videos/result_3.mp4"
+                type="video/mp4"
+              />
+            </video>
+            
+            <div class="caption-text">
+              <p>
+              <p>
+              Additional subjects from the dataset are shown: from left to right, each row presents the neutral input sequence followed by EMO-GA outputs for the target emotions Happy, Angry, Sad, and Surprised. We tested many more subjects from the dataset; for further results, please refer to the presentation above, and feel free to contact with any queries.
+              </p>
+            </div>
+          </div>
+          <!-- /Second video block -->
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End Results section -->
 
 
-<!-- Video carousel -->
+
+<!-- Single Image + Caption -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Texture only Optimization</h2>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+      </div>
+
+      <div class="video-wrapper" style="margin-top: 1.5rem;">
+        <img
+          src="static/images/result_4.png"
+          alt="EMO-GA result visualization"
+        />
+        <div class="caption-text">
+          <p>
+           Additional effect of photometric color matching. (a) Baseline avatar, (b) EMO-GA capturing blush
+          from diffusion when prompted for makeup on the forehead and cheeks. Although not our focus, this shows how
+          photometric cues in diffusion images can yield simple makeup-like texture edits, allowing the avatar to 
+          alter the facial texture dramatically without altering the identity.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+<!-- End Single Image + Caption -->
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title bib-title">BibTeX</h2>
+    <pre><code>@mastersthesis{utkarsh2025emoga,
+  title        = {Emotion-Driven Editing of Gaussian Avatars},
+  author       = {Utkarsh, Abhinav},
+  school       = {Technical University of Munich},
+  type         = {Master’s Thesis},
+  address      = {Munich, Germany},
+  year         = {2025},
+  month        = {February},
+  url          = {https://abhinavutkarsh.com/Emotion-Driven-Editing-of-Gaussian-Avatars/static/pdfs/Emotion-Driven Editing of Gaussian Avatars.pdf},
+  note         = {Visual Computing \&amp; Artificial Intelligence Lab}
+}</code></pre>
+  </div>
 </section>
-<!--End BibTex citation -->
-
+<!--End BibTeX citation -->
 
   <footer class="footer">
   <div class="container">
@@ -291,8 +369,8 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Built from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+           <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
@@ -302,11 +380,30 @@
   </div>
 </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('mode-toggle');
+    const modeIcon  = document.getElementById('mode-icon');
+    let   isCooldown = false;
 
-    <!-- End of Statcounter Code -->
+    toggleBtn.addEventListener('click', () => {
+      if (isCooldown) return;
+      isCooldown = true;
+      toggleBtn.classList.add('pressed');
+      setTimeout(() => {
+        const nowLight = document.body.classList.toggle('light-mode');
 
-  </body>
-  </html>
+        if (nowLight) {
+          modeIcon.className = "fas fa-moon";
+        } else {
+          modeIcon.className = "fas fa-sun";
+        }
+        toggleBtn.classList.remove('pressed');
+        setTimeout(() => (isCooldown = false), 300);
+      }, 300);
+    });
+  });
+  </script>
+
+</body>
+</html>

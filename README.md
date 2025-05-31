@@ -1,50 +1,77 @@
-# Academic Project Page Template
-This is an academic paper project page template.
+# Emotion-Driven Editing of GaussianAvatars  
+Master’s Thesis in Robotics, Cognition & Intelligence — Technical University of Munich (TUM)
 
+Author: Abhinav Utkarsh, B.Tech. Information Technology  
+Supervisor: Prof. Dr. Matthias Nießner  
+Advisor: Shivangi Aneja, M.Sc. Informatics  
+Date: 5 February 2025 · Munich, Germany
+___
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+## Project Overview
+This repository hosts the project webpage and supplementary material for my master’s thesis Emotion-Driven Editing of GaussianAvatars (**EMO-GA**).  
+It provides
 
+- a teaser video and multiple qualitative results,  
+- a full pipeline overview,
+- the full thesis PDF and slide deck,  
+- ready-to-copy BibTeX entries, and  
+- the source code plus sample pseudo-ground-truth generated training data (coming soon).
 
+## Hardware
+All experiments were run locally on my own RTX 4090 GPU.
+Diffusion-based editing is GPU-intensive; comparable VRAM is required to regenerate the pseudo ground-truth images. A small pre-computed set will be released for reproduction on less powerful hardware.
 
-## Start using the template
-To start using the template click on `Use this Template`.
+## How to cite
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+### 1. Cite the thesis
+```bibtex
+@mastersthesis{utkarsh2025emoga,
+  title   = {Emotion-Driven Editing of Gaussian Avatars},
+  author  = {Utkarsh, Abhinav},
+  school  = {Technical University of Munich},
+  type    = {Master’s Thesis},
+  address = {Munich, Germany},
+  year    = {2025},
+  month   = {February},
+  url     = {https://abhinavutkarsh.com/Emotion-Driven-Editing-of-Gaussian-Avatars/static/pdfs/Emotion-Driven%20Editing%20of%20Gaussian%20Avatars.pdf},
+  note    = {Visual Computing \& Artificial Intelligence Lab}
+}
+```
+### 2. Research Credit that EMO-GA heavily uses (More in slide deck)
+```bibtex
+@article{kirschstein2023nersemble,
+  title   = {Nersemble: Multi-View Radiance Field Reconstruction of Human Heads},
+  author  = {Kirschstein, Tobias and Qian, Shenhan and Giebenhain, Simon and Walter, Tim and Nie{\ss}ner, Matthias},
+  journal = {ACM Transactions on Graphics (TOG)},
+  volume  = {42},
+  number  = {4},
+  pages   = {1--14},
+  year    = {2023},
+  publisher = {ACM}
+}
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+@inproceedings{qian2024gaussianavatars,
+  title     = {GaussianAvatars: Photorealistic Head Avatars with Rigged 3D Gaussians},
+  author    = {Qian, Shenhan and Kirschstein, Tobias and Schoneveld, Liam and Davoli, Davide and Giebenhain, Simon and Nie{\ss}ner, Matthias},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages     = {20299--20309},
+  year      = {2024}
+}
 
-## Components
-- Teaser video
-- Images Carousel
-- Youtube embedding
-- Video Carousel
-- PDF Poster
-- Bibtex citation
+@article{zhao2024ultraedit,
+  title   = {UltraEdit: Instruction-Based Fine-Grained Image Editing at Scale},
+  author  = {Zhao, Haozhe and Ma, Xiaojian and Chen, Liang and Si, Shuzheng and Wu, Rujie and An, Kaikai and Yu, Peiyu and Zhang, Minjia and Li, Qing and Chang, Baobao},
+  journal = {arXiv preprint arXiv:2407.05282},
+  year    = {2024}
+}
 
-## Tips:
-- The `index.html` file contains comments instructing you what to replace, you should follow these comments.
-- The `meta` tags in the `index.html` file are used to provide metadata about your paper 
-(e.g. helping search engine index the website, showing a preview image when sharing the website, etc.)
-- The resolution of images and videos can usually be around 1920-2048, there rarely a need for better resolution that take longer to load. 
-- All the images and videos you use should be compressed to allow for fast loading of the website (and thus better indexing by search engines). For images, you can use [TinyPNG](https://tinypng.com), for videos you can need to find the tradeoff between size and quality.
-- When using large video files (larger than 10MB), it's better to use youtube for hosting the video as serving the video from the website can take time.
-- Using a tracker can help you analyze the traffic and see where users came from. [statcounter](https://statcounter.com) is a free, easy to use tracker that takes under 5 minutes to set up. 
-- This project page can also be made into a github pages website.
-- Replace the favicon to one of your choosing (the default one is of the Hebrew University). 
-- Suggestions, improvements and comments are welcome, simply open an issue or contact me. You can find my contact information at [https://horwitz.ai](https://horwitz.ai)
+@article{aneja2024gaussianspeech,
+  title={GaussianSpeech: Audio-Driven Gaussian Avatars},
+  author={Aneja, Shivangi and Sevastopolsky, Artem and Kirschstein, Tobias and Thies, Justus and Dai, Angela and Nie{\ss}ner, Matthias},
+  journal={arXiv preprint arXiv:2411.18675},
+  year={2024}
+}
+```
 
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
