@@ -797,6 +797,56 @@ describe('request form', () => {
     assert.equal(res.status, 502);
   });
 
+  test('a delivered request is kept in the log', async () => {
+    const env = makeEnv();
+    await worker.fetch(post('/request', valid), env);
+    const keys = [...env.RATE.store.keys()].filter((k) => k.startsWith('req:'));
+    assert.equal(keys.length, 1);
+    const saved = JSON.parse(env.RATE.store.get(keys[0]).value);
+    assert.equal(saved.email, 'jane@university.edu');
+    assert.equal(saved.emailSent, true);
+    assert.ok(saved.at);
+  });
+
+  test('a request survives in the log even when the email fails', async () => {
+    resendOk = false;
+    const env = makeEnv();
+    const res = await worker.fetch(post('/request', valid), env);
+    assert.equal(res.status, 502);
+    const keys = [...env.RATE.store.keys()].filter((k) => k.startsWith('req:'));
+    assert.equal(keys.length, 1, 'the request must not be lost');
+    assert.equal(JSON.parse(env.RATE.store.get(keys[0]).value).emailSent, false);
+  });
+
+  test('a honeypot submission is not written to the log', async () => {
+    const env = makeEnv();
+    await worker.fetch(post('/request', { ...valid, website: 'spam' }), env);
+    assert.equal([...env.RATE.store.keys()].filter((k) => k.startsWith('req:')).length, 0);
+  });
+
+  test('a rejected request is not written to the log', async () => {
+    const env = makeEnv();
+    await worker.fetch(post('/request', { ...valid, email: 'bad' }), env);
+    assert.equal([...env.RATE.store.keys()].filter((k) => k.startsWith('req:')).length, 0);
+  });
+
+  test('log keys do not collide within the same millisecond', async () => {
+    const env = makeEnv({ REQUEST_LIMIT: makeLimiter(50) });
+    await Promise.all(
+      Array.from({ length: 5 }, () => worker.fetch(post('/request', valid), env))
+    );
+    assert.equal([...env.RATE.store.keys()].filter((k) => k.startsWith('req:')).length, 5);
+  });
+
+  test('the log survives a KV outage without failing the request', async () => {
+    const env = makeEnv({
+      RATE: { get: async () => null, put: async () => { throw new Error('kv down'); }, delete: async () => {} }
+    });
+    const res = await worker.fetch(post('/request', valid), env);
+    assert.equal(res.status, 200);
+    assert.equal(sentEmails.length, 1);
+  });
+
   test('a missing API key fails closed', async () => {
     const env = makeEnv({ RESEND_API_KEY: undefined });
     const res = await worker.fetch(post('/request', valid), env);

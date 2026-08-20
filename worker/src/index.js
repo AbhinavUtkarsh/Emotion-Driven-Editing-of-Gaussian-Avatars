@@ -430,13 +430,17 @@ async function handleRequestAccess(request, env) {
     }
   }
 
-  const sent = await sendRequestEmail(env, {
+  const data = {
     item: item,
     name: name,
     email: email,
     affiliation: affiliation,
     message: message
-  });
+  };
+
+  const sent = await sendRequestEmail(env, data);
+
+    await storeRequest(env, data, sent);
 
   if (!sent) {
     return json(
@@ -448,6 +452,22 @@ async function handleRequestAccess(request, env) {
   }
 
   return json({ ok: true }, 200, request, env);
+}
+
+const REQUEST_LOG_TTL_SECONDS = 90 * 24 * 60 * 60;
+
+async function storeRequest(env, data, emailSent) {
+  if (!env.RATE) return;
+  try {
+    const stamp = new Date().toISOString();
+    const suffix = b64urlEncode(crypto.getRandomValues(new Uint8Array(6)));
+    await env.RATE.put(
+      'req:' + stamp + ':' + suffix,
+      JSON.stringify({ ...data, at: stamp, emailSent: emailSent }),
+      { expirationTtl: REQUEST_LOG_TTL_SECONDS }
+    );
+  } catch (e) {
+      }
 }
 
 
