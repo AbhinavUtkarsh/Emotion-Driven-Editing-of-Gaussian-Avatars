@@ -9,7 +9,7 @@ preview_urls = false
 [vars]
 NOTIFY_EMAIL = "abhinav.utkarsh@tum.de"
 
-MAIL_FROM = "EMO-GA Access <onboarding@resend.dev>"
+MAIL_FROM = "EMO-GA Access <noreply@send.abhinavutkarsh.com>"
 
 ALLOWED_ORIGINS = "https://abhinavutkarsh.com,https://www.abhinavutkarsh.com"
 
