@@ -1,4 +1,58 @@
 
+@keyframes access-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes access-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.access-hero .publication-title,
+.access-hero .subtitle-info,
+.access-lede,
+.access-card,
+.access-divider,
+.access-shell > .access-note {
+  animation: access-rise 320ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.access-hero .publication-title { animation-delay: 0ms; }
+.access-hero .subtitle-info     { animation-delay: 60ms; }
+.access-lede                    { animation-delay: 120ms; }
+.access-card:nth-of-type(1)     { animation-delay: 180ms; }
+.access-divider                 { animation-delay: 210ms; }
+.access-card:nth-of-type(2)     { animation-delay: 240ms; }
+.access-shell > .access-note    { animation-delay: 300ms; }
+
+.back-button,
+#mode-toggle {
+  animation: access-fade 380ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 80ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .access-hero .publication-title,
+  .access-hero .subtitle-info,
+  .access-lede,
+  .access-card,
+  .access-divider,
+  .access-shell > .access-note,
+  .back-button,
+  #mode-toggle,
+  .access-status.is-visible,
+  .download-ready.is-visible {
+    animation: none;
+  }
+}
+
 .back-button {
   position: fixed;
   top: 1rem;
@@ -125,6 +179,22 @@ body.light-mode .field-label {
   background-position: right 0.85rem center;
   background-size: 1.1rem;
   padding-right: 2.5rem;
+
+    color-scheme: dark;
+}
+
+.access-select option {
+  background-color: #1c1c1c;
+  color: #eeeeee;
+}
+
+body.light-mode .access-select {
+  color-scheme: light;
+}
+
+body.light-mode .access-select option {
+  background-color: #ffffff;
+  color: #111111;
 }
 
 .access-textarea {
@@ -176,6 +246,7 @@ body.light-mode .access-select {
 
 .access-status.is-visible {
   display: block;
+  animation: access-rise 240ms cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 .access-status.is-error {
@@ -251,6 +322,7 @@ body.light-mode .access-divider::after {
 
 .download-ready.is-visible {
   display: block;
+  animation: access-rise 280ms cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 .cf-turnstile {

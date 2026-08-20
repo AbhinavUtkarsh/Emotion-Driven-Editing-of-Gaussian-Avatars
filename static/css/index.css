@@ -287,10 +287,28 @@ section.hero .title.is-3 {
   border-radius: 1.25rem;
 }
 
-.container.is-max-desktop {
-  max-width: 80% !important;
-  padding-left: 1.5rem; 
+:root {
+  --content-max: 1200px;
+}
+
+.container.is-max-desktop,
+.container.is-fluid {
+  max-width: var(--content-max) !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.hero-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.column.is-four-fifths,
+.column.is-full,
+.column.is-8 {
+  width: 100% !important;
 }
 
 .section.hero,
@@ -483,10 +501,10 @@ body.light-mode section#BibTeX .content {
     width: 100% !important;
   }
 
-    .columns,
+      .columns,
   .column {
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
