@@ -2,6 +2,10 @@ name = "emoga-access"
 main = "src/index.js"
 compatibility_date = "2024-11-06"
 
+workers_dev = true
+
+preview_urls = false
+
 [vars]
 NOTIFY_EMAIL = "abhinav.utkarsh@tum.de"
 
@@ -19,7 +23,7 @@ bucket_name = "emoga-private"
 
 [[kv_namespaces]]
 binding = "RATE"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+id = "d9c229a4c1a5404cb50dac52aaf015d1"
 
 [[ratelimits]]
 name = "UNLOCK_LIMIT"
