@@ -1,0 +1,16 @@
+{
+  "name": "emoga-access",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Access gate for the EMO-GA thesis and presentation.",
+  "scripts": {
+    "hash": "node scripts/hash-password.mjs",
+    "test": "node --test test/",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.86.0"
+  }
+}

@@ -1,0 +1,282 @@
+
+.back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 9999;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.back-button:active {
+  transform: scale(0.95);
+}
+
+.back-button .fas {
+  font-size: 1.5rem;
+}
+
+body.light-mode .back-button {
+  background-color: #dddddd !important;
+  color: #333333 !important;
+}
+
+.access-shell {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.access-card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+body.light-mode .access-card {
+  background-color: #fafafa !important;
+  border-color: #e2e2e2 !important;
+}
+
+.access-card h2.title {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+body.light-mode .access-card h2.title {
+  color: #000000 !important;
+}
+
+.access-card p.access-note {
+  margin-bottom: 1.75rem;
+}
+
+.access-hero .hero-body {
+  padding-top: 5.5rem;
+}
+
+.access-lede,
+.access-card p.access-note {
+  text-align: left;
+  line-height: 1.7;
+  color: #bdbdbd;
+}
+
+body.light-mode .access-lede,
+body.light-mode .access-card p.access-note {
+  color: #444 !important;
+}
+
+.access-lede {
+  max-width: 78ch;
+  margin: 0 auto 2.5rem auto;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  margin-bottom: 0.4rem;
+}
+
+body.light-mode .field-label {
+  color: #555 !important;
+}
+
+.access-input,
+.access-textarea,
+.access-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #eee;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.6rem;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.access-select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 1.1rem;
+  padding-right: 2.5rem;
+}
+
+.access-textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.access-input:focus,
+.access-textarea:focus,
+.access-select:focus {
+  outline: none;
+  border-color: hsl(204, 86%, 53%);
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.access-input::placeholder,
+.access-textarea::placeholder {
+  color: #6f6f6f;
+}
+
+body.light-mode .access-input,
+body.light-mode .access-textarea,
+body.light-mode .access-select {
+  color: #111 !important;
+  background-color: #ffffff !important;
+  border-color: #d0d0d0 !important;
+}
+
+.access-submit {
+  width: 100%;
+  justify-content: center;
+}
+
+.access-submit[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.access-status {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: left;
+  border: 1px solid transparent;
+}
+
+.access-status.is-visible {
+  display: block;
+}
+
+.access-status.is-error {
+  background-color: rgba(255, 56, 96, 0.12);
+  border-color: rgba(255, 56, 96, 0.4);
+  color: #ff8fa3;
+}
+
+.access-status.is-success {
+  background-color: rgba(72, 199, 142, 0.12);
+  border-color: rgba(72, 199, 142, 0.4);
+  color: #7fe0b4;
+}
+
+.access-status.is-info {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #cfcfcf;
+}
+
+body.light-mode .access-status.is-error {
+  color: #b3123a !important;
+}
+
+body.light-mode .access-status.is-success {
+  color: #12734d !important;
+}
+
+body.light-mode .access-status.is-info {
+  color: #333 !important;
+}
+
+.access-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 2rem 0;
+  color: #7a7a7a;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.access-divider::before,
+.access-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+body.light-mode .access-divider {
+  color: #777 !important;
+}
+
+body.light-mode .access-divider::before,
+body.light-mode .access-divider::after {
+  background-color: #dcdcdc !important;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.download-ready {
+  display: none;
+  margin-top: 1.25rem;
+}
+
+.download-ready.is-visible {
+  display: block;
+}
+
+.cf-turnstile {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .access-shell {
+    padding: 0 0.75rem;
+  }
+
+  .access-card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .access-lede {
+    max-width: none;
+  }
+
+  .back-button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .back-button .fas {
+    font-size: 1.15rem;
+  }
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Request access to the EMO-GA thesis and presentation.">
+
+  <title>Request Access</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/access.css">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+  <a class="back-button" href="index.html" aria-label="Back to the project page">
+    <span class="fas fa-arrow-left"></span>
+  </a>
+
+  <button id="mode-toggle" aria-label="Switch dark/light mode">
+    <span id="mode-icon" class="fas fa-sun"></span>
+  </button>
+
+  <section class="hero access-hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Request Access</h1>
+            <div class="is-size-5 publication-authors subtitle-info">
+              <span class="author-block">
+                Emotion-Driven Editing of GaussianAvatars<br />
+                <a href="https://www.niessnerlab.org/" target="_blank" rel="noopener" class="plain-link">
+                  Visual Computing &amp; Artificial Intelligence Lab
+                </a><br />
+                <a href="https://www.tum.de/" target="_blank" rel="noopener" class="plain-link">
+                  Technical University of Munich (TUM)
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero">
+    <div class="access-shell">
+
+      <p class="access-lede">
+        The full thesis and the slide deck are shared on request rather than
+        published openly. If you already have a password, enter it below to open
+        the file. Otherwise send a short request and a password will be emailed
+        back to you.
+      </p>
+
+            <div class="access-card">
+        <h2 class="title is-4">I have a password</h2>
+        <p class="access-note">Choose the file and enter the password you were sent.</p>
+
+        <form id="unlock-form" autocomplete="off" novalidate>
+          <label class="field-label" for="unlock-item">File</label>
+          <select class="access-select" id="unlock-item" name="item">
+            <option value="thesis">Thesis (PDF)</option>
+            <option value="presentation">Presentation (PPTX)</option>
+          </select>
+
+          <label class="field-label" for="unlock-password">Password</label>
+          <input
+            class="access-input"
+            type="password"
+            id="unlock-password"
+            name="password"
+            autocomplete="current-password"
+            maxlength="200"
+            placeholder="Enter password"
+          />
+
+          <button type="submit" id="unlock-submit"
+                  class="button is-normal is-rounded is-dark access-submit">
+            <span class="icon"><i class="fas fa-unlock"></i></span>
+            <span>Unlock</span>
+          </button>
+        </form>
+
+        <div class="access-status" id="unlock-status" role="status" aria-live="polite"></div>
+
+        <div class="download-ready" id="download-ready">
+          <a class="button is-normal is-rounded is-dark access-submit" id="download-link" href="#" rel="noopener">
+            <span class="icon"><i class="fas fa-download"></i></span>
+            <span>Open file</span>
+          </a>
+          <p class="access-note" style="margin-top: 0.75rem; font-size: 0.85rem;">
+            This link expires in a few minutes. Unlock again if it lapses.
+          </p>
+        </div>
+      </div>
+
+      <div class="access-divider">or</div>
+
+            <div class="access-card">
+        <h2 class="title is-4">Request a password</h2>
+        <p class="access-note">
+          Tell me who you are and what you need it for. The request is emailed to
+          me and I will reply with the password.
+        </p>
+
+        <form id="request-form" novalidate>
+          <label class="field-label" for="request-item">What do you need</label>
+          <select class="access-select" id="request-item" name="item">
+            <option value="thesis">Thesis (PDF)</option>
+            <option value="presentation">Presentation (PPTX)</option>
+            <option value="both">Both</option>
+          </select>
+
+          <label class="field-label" for="request-name">Your name</label>
+          <input class="access-input" type="text" id="request-name" name="name"
+                 maxlength="120" autocomplete="name" placeholder="Jane Doe" />
+
+          <label class="field-label" for="request-email">Your email</label>
+          <input class="access-input" type="email" id="request-email" name="email"
+                 maxlength="200" autocomplete="email" placeholder="jane@university.edu" />
+
+          <label class="field-label" for="request-affiliation">Affiliation (optional)</label>
+          <input class="access-input" type="text" id="request-affiliation" name="affiliation"
+                 maxlength="160" autocomplete="organization" placeholder="University or company" />
+
+          <label class="field-label" for="request-message">Why do you need it</label>
+          <textarea class="access-textarea" id="request-message" name="message"
+                    maxlength="2000" placeholder="A sentence or two is plenty."></textarea>
+
+                    <div class="honeypot" aria-hidden="true">
+            <label for="request-website">Website</label>
+            <input type="text" id="request-website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div id="turnstile-slot"></div>
+
+          <button type="submit" id="request-submit"
+                  class="button is-normal is-rounded is-dark access-submit">
+            <span class="icon"><i class="fas fa-paper-plane"></i></span>
+            <span>Send request</span>
+          </button>
+        </form>
+
+        <div class="access-status" id="request-status" role="status" aria-live="polite"></div>
+      </div>
+
+      <p class="access-note" style="text-align: center; font-size: 0.85rem;">
+        Prefer email? Write to
+        <a href="mailto:abhinav.utkarsh@tum.de">abhinav.utkarsh@tum.de</a> directly.
+      </p>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Built from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+              <br> This website is licensed under a <a rel="license noopener" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/theme.js"></script>
+  <script src="static/js/access-config.js"></script>
+  <script src="static/js/access.js"></script>
+
+</body>
+</html>

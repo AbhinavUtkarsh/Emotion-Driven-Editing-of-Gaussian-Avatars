@@ -1,5 +1,5 @@
 # Emotion-Driven Editing of GaussianAvatars  
-Master’s Thesis in Robotics, Cognition & Intelligence , Technical University of Munich (TUM)
+Master’s Thesis in Robotics, Cognition & Intelligence, Technical University of Munich (TUM)
 
 Author: Abhinav Utkarsh, B.Tech. Information Technology  
 Supervisor: Prof. Dr. Matthias Nießner  

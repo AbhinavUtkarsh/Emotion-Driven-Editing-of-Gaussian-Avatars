@@ -42,13 +42,6 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-tva0f+Km2HIRoWWI/HLoMleSmnWtIZ3/p3xF/qPwP9etekxrGQNXA8uEl3q12Y5tEJYAnab1P7p3DQmRF8wRAg=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-  />
 </head>
 <body>
 
@@ -83,7 +76,7 @@
                     <div class="publication-links">
                          <!-- PDF link -->
                       <span class="link-block">
-                        <a href="request.html?item=thesis" target="_blank"
+                        <a href="request.html?item=thesis"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -116,7 +109,7 @@
 
                 <!-- Presentation -->
                 <span class="link-block">
-                  <a href="request.html?item=presentation" target="_blank"
+                  <a href="request.html?item=presentation"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-powerpoint"></i>
@@ -145,6 +138,9 @@
           controls
           muted
           loop
+          playsinline
+          webkit-playsinline
+          preload="metadata"
         >
           <source
             src="static/videos/banner_video.mp4"
@@ -162,7 +158,7 @@
             and texture (e.g., subtle shading around the eyes, shifts
             in skin tone for anger). This synergy underscores how
             combining color and geometry optimization captures
-            nuanced expressions,far beyond what simple mesh deformations
+            nuanced expressions, far beyond what simple mesh deformations
             alone could convey.
           </p>
         </div>
@@ -178,9 +174,9 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-left">
           <p>
-            High-fidelity 3-D head avatars are becoming indispensable for emerging spatial computing devices, such as Apple’s Vision Pro, where virtual “spatial persona” calls and other immersive experiences demand natural, expressive facial renderings. Yet, the challenge of creating avatars that convincingly display a broad range of emotions,complete with texture cues like wrinkles, skin-tone variations, and shadows,remains largely unsolved. Traditional 3D pipelines based on purely geometric blend-shapes or one-shot 2-D editing often omit these subtleties, leading to expressions that look hollow or appear inconsistent when viewed from varying spatial positions or angles.
+            High-fidelity 3-D head avatars are becoming indispensable for emerging spatial computing devices, such as Apple’s Vision Pro, where virtual “spatial persona” calls and other immersive experiences demand natural, expressive facial renderings. Yet, the challenge of creating avatars that convincingly display a broad range of emotions, complete with texture cues like wrinkles, skin-tone variations, and shadows, remains largely unsolved. Traditional 3D pipelines based on purely geometric blend-shapes or one-shot 2-D editing often omit these subtleties, leading to expressions that look hollow or appear inconsistent when viewed from varying spatial positions or angles.
           </p>
 
           <p>
@@ -209,7 +205,7 @@
       src="static/images/ch4_diagsv_3_5_5.png"
       alt="EMO-GA pipeline overview"
     />
-      <figcaption class="pipeline-caption has-text-justified" style="margin-top: 1rem;">
+      <figcaption class="pipeline-caption has-text-left" style="margin-top: 1rem;">
         Complete EMO-GA pipeline. Phase (a) in lavender (top) produces pseudo-ground-truth images via
         diffusion-based editing. These are often spatially and temporally inconsistent but carry strong emotional cues.
         Phase (b) in lilac constructs and renders the Gaussian avatar using FLAME parameters and input sequence. Finally,
@@ -243,6 +239,9 @@
               controls
               muted
               loop
+              playsinline
+              webkit-playsinline
+              preload="metadata"
             >
               <source
                 src="static/videos/baseline_1.mp4"
@@ -257,7 +256,7 @@
                 subject’s identity and disrupt temporal coherence. EMOTE optimizes geometry but lacks texture
                 refinement and therefore fails to reproduce the fine surface details needed to express emotion.
                 In contrast, EMO-GA preserves identity and multi-view consistency while introducing subtle
-                texture cues,such as forehead wrinkles,that clearly convey anger. For more such results,
+                texture cues, such as forehead wrinkles, that clearly convey anger. For more such results,
                 please refer to the presentation above.
               </p>
             </div>
@@ -273,6 +272,9 @@
               controls
               muted
               loop
+              playsinline
+              webkit-playsinline
+              preload="metadata"
             >
               <source
                 src="static/videos/result_2.mp4"
@@ -286,11 +288,14 @@
           <div class="results-video-wrapper">
             <video
               poster=""
-              id="tree-duplicate-2"
+              id="tree-duplicate-3"
               autoplay
               controls
               muted
               loop
+              playsinline
+              webkit-playsinline
+              preload="metadata"
             >
               <source
                 src="static/videos/result_3.mp4"
@@ -380,30 +385,7 @@
   </div>
 </footer>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('mode-toggle');
-    const modeIcon  = document.getElementById('mode-icon');
-    let   isCooldown = false;
-
-    toggleBtn.addEventListener('click', () => {
-      if (isCooldown) return;
-      isCooldown = true;
-      toggleBtn.classList.add('pressed');
-      setTimeout(() => {
-        const nowLight = document.body.classList.toggle('light-mode');
-
-        if (nowLight) {
-          modeIcon.className = "fas fa-moon";
-        } else {
-          modeIcon.className = "fas fa-sun";
-        }
-        toggleBtn.classList.remove('pressed');
-        setTimeout(() => (isCooldown = false), 300);
-      }, 300);
-    });
-  });
-  </script>
+  <script src="static/js/theme.js"></script>
 
 </body>
 </html>

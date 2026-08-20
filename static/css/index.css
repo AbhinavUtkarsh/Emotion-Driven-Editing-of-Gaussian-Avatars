@@ -201,20 +201,20 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 5rem;
+  border-radius: 1.25rem;
   overflow: hidden;
 }
 
 .results-video-wrapper {
-  max-width: 1600px;        
-  margin: 0 auto 7rem auto; 
+  max-width: 1600px;
+  margin: 0 auto 7rem auto;
 }
 
 .results-video-wrapper video {
-  width: 100%;             
-  height: auto;            
-  border-radius: 5rem;   
-  display: block;         
+  width: 100%;
+  height: auto;
+  border-radius: 1.25rem;
+  display: block;
 }
 
 .results-video-wrapper:nth-of-type(2) {
@@ -224,18 +224,52 @@ body {
 .video-wrapper img {
   width: 50%;
   height: auto;
-  border-radius: 3rem;
+  border-radius: 1.25rem;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .caption-text {
   margin-top: 1.5rem;
 }
+
+.caption-text p,
+.pipeline-caption,
+.content,
+.content p,
+.has-text-justified,
+.has-text-justified p {
+  text-align: left !important;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-wrap: pretty;
+}
+
 .caption-text p {
-  text-align: justify;
   color: #ddd;
-  line-height: 1.6em; 
+  line-height: 1.7;
+}
+
+.caption-text,
+.pipeline-caption,
+.content {
+  max-width: 78ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content p {
+  line-height: 1.7;
+}
+
+.footer .content,
+.footer .content p {
+  text-align: center !important;
+  max-width: none;
+}
+
+section#BibTeX .content {
+  max-width: none;
 }
 
 section.hero .title.is-3 {
@@ -245,7 +279,7 @@ section.hero .title.is-3 {
 .image img {
   width: 100%;
   height: auto;
-  border-radius: 5rem;
+  border-radius: 1.25rem;
 }
 
 .container.is-max-desktop {
@@ -432,37 +466,68 @@ body.light-mode section#BibTeX .content {
 
 @media (max-width: 768px) {
 
-  .container.is-max-desktop {
+  .container.is-max-desktop,
+  .container.is-fluid {
     max-width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-
-  .column.is-four-fifths {
-    width: 100% !important;
-  }
-
-  .columns,
-  .column {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
   }
 
-  .video-wrapper {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  .column.is-four-fifths,
+  .column.is-full {
+    width: 100% !important;
   }
 
-  .content.has-text-justified p {
+    .columns,
+  .column {
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .video-wrapper,
+  .results-video-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+    .section,
+  .section.hero,
+  .hero-body {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .caption-text,
+  .pipeline-caption,
+  .content {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .content p,
+  .caption-text p,
+  .pipeline-caption {
     font-size: 0.95rem;
-    line-height: 1.4;
+    line-height: 1.6;
     margin-bottom: 1rem;
+    word-spacing: normal;
   }
 
-  .video-wrapper video,
+    .video-wrapper video,
   .results-video-wrapper video,
   .video-wrapper img,
   .image img {
-    border-radius: 2rem !important;
+    border-radius: 0.75rem !important;
+  }
+
+    .video-wrapper img {
+    width: 100%;
+  }
+
+  .results-video-wrapper {
+    margin-bottom: 3rem;
   }
 }
