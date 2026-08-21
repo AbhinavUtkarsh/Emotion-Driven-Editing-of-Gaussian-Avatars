@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="dark light">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Data protection information for the EMO-GA access request form.">
+
+  <title>Privacy | Abhinav Utkarsh</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/access.css">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+    <div class="page-veil" id="page-veil" aria-hidden="true"></div>
+
+    <a class="back-button" href="index.html" aria-label="Back">
+    <span class="fas fa-arrow-left"></span>
+  </a>
+
+  <button id="mode-toggle" aria-label="Switch dark/light mode">
+    <span id="mode-icon" class="fas fa-sun"></span>
+  </button>
+
+  <section class="section hero">
+    <div class="legal-shell">
+
+      <h1 class="title is-2 legal-title">Privacy</h1>
+
+      <h2>Information pursuant to Art. 13 GDPR</h2>
+      <p>
+        Abhinav Utkarsh<br />
+        Controller for the data described below.<br />
+        Contact details are given in the
+        <a href="https://abhinavutkarsh.com/#/impressum" target="_blank" rel="noopener">Impressum</a>.
+      </p>
+
+      <h2>What is collected</h2>
+      <p>
+        These pages set no cookies, run no analytics and contain no tracking.
+        Loading them does cause your browser to contact the providers listed
+        under Recipients below, as happens with any website.
+      </p>
+      <p>
+        Submitting the access request form sends the name, email address,
+        affiliation and message you typed, together with which document you
+        asked for. Nothing else is read from your browser. The form contains
+        one hidden decoy field used to catch automated spam; a person leaves it
+        empty and it is discarded.
+      </p>
+      <p>
+        Entering a password to unlock a document checks it against a stored
+        one-way hash. The password is not logged and not retained.
+      </p>
+
+      <h2>Purpose and legal basis</h2>
+      <p>
+        The data is used only to read your request, decide on it, and reply to
+        you. It is not sold, not shared, and not used to contact you about
+        anything else.
+      </p>
+      <p>
+        Legal basis: Art. 6 (1) (b) GDPR, steps taken at your request, and
+        Art. 6 (1) (f) GDPR, the legitimate interest in controlling access to
+        unpublished academic work.
+      </p>
+
+      <h2>Storage and retention</h2>
+      <p>
+        A copy of each request is held for 90 days and then deleted
+        automatically. It exists so that a request is not lost if the
+        notification email fails to arrive.
+      </p>
+      <p>
+        The notification email is delivered to my personal mailbox and remains
+        there, under my control, until I delete it. There is no automatic
+        deletion of received mail. On request I will delete it.
+      </p>
+
+      <h2>Recipients and processors</h2>
+      <p>
+        <strong>GitHub</strong> serves these pages and records requests for
+        them as any web server does.
+      </p>
+      <p>
+        <strong>Cloudflare</strong> runs the access service, holds the 90-day
+        copy, and stores the documents. As the operator carrying the traffic it
+        necessarily sees your IP address. What is written to storage is only a
+        counter keyed to a cryptographic hash of that address, kept for at most
+        15 minutes to limit password guessing; the address itself is never
+        stored.
+      </p>
+      <p>
+        <strong>Resend</strong> delivers the notification email. Mail for this
+        domain is sent from their Ireland region, though Resend is a
+        United States company and access from outside the EU cannot be ruled
+        out.
+      </p>
+      <p>
+        <strong>Google Fonts</strong> serves the typefaces, so your browser
+        contacts Google when loading these pages. This is the only third party
+        contacted.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        No cookies are set and no analytics are used. Your dark or light mode
+        choice is kept in your browser's local storage. It never leaves your
+        device. Clearing site data removes it.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        You may request access, correction, erasure, restriction of use, a
+        portable copy, and you may object to the use of your data. As the only
+        data held is what you typed into the form, deletion is straightforward
+        and will be carried out promptly.
+      </p>
+      <p>
+        You also have the right to lodge a complaint with a data protection
+        supervisory authority.
+      </p>
+
+      <p class="legal-copyright">&copy; 2024-2026 Abhinav Utkarsh</p>
+
+    </div>
+  </section>
+
+  <script>
+        (function () {
+      var back = document.querySelector('.back-button');
+      if (!back || !document.referrer) return;
+      try {
+        var from = new URL(document.referrer);
+        if (from.origin !== window.location.origin) return;
+        if (from.pathname === window.location.pathname) return; // came from here
+        back.href = from.href;
+      } catch (e) {
+              }
+    })();
+  </script>
+
+  <script src="static/js/theme.js"></script>
+  <script src="static/js/transitions.js"></script>
+
+</body>
+</html>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="color-scheme" content="dark light">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="Request access to the EMO-GA thesis and presentation.">
@@ -17,6 +18,9 @@
   <script defer src="static/js/fontawesome.all.min.js"></script>
 </head>
 <body>
+
+    <div class="page-veil" id="page-veil" aria-hidden="true"></div>
+
 
   <a class="back-button" href="index.html" aria-label="Back to the project page">
     <span class="fas fa-arrow-left"></span>
@@ -64,13 +68,13 @@
         <p class="access-note">Choose the file and enter the password you were sent.</p>
 
         <form id="unlock-form" autocomplete="off" novalidate>
-          <label class="field-label" for="unlock-item">File</label>
+          <label class="access-label" for="unlock-item">File</label>
           <select class="access-select" id="unlock-item" name="item">
             <option value="thesis">Thesis (PDF)</option>
             <option value="presentation">Presentation (PPTX)</option>
           </select>
 
-          <label class="field-label" for="unlock-password">Password</label>
+          <label class="access-label" for="unlock-password">Password</label>
           <input
             class="access-input"
             type="password"
@@ -101,38 +105,37 @@
         </div>
       </div>
 
-      <div class="access-divider">or</div>
+      <div class="access-divider" role="separator"></div>
 
             <div class="access-card">
         <h2 class="title is-4">Request a password</h2>
         <p class="access-note">
-          Tell me who you are and what you need it for. The request is emailed to
-          me and I will reply with the password.
+          Submit a request for access. The password will be shared by email.
         </p>
 
         <form id="request-form" novalidate>
-          <label class="field-label" for="request-item">What do you need</label>
+          <label class="access-label" for="request-item">What do you need</label>
           <select class="access-select" id="request-item" name="item">
             <option value="thesis">Thesis (PDF)</option>
             <option value="presentation">Presentation (PPTX)</option>
             <option value="both">Both</option>
           </select>
 
-          <label class="field-label" for="request-name">Your name</label>
+          <label class="access-label" for="request-name">Your name</label>
           <input class="access-input" type="text" id="request-name" name="name"
-                 maxlength="120" autocomplete="name" placeholder="Jane Doe" />
+                 maxlength="120" autocomplete="name" />
 
-          <label class="field-label" for="request-email">Your email</label>
+          <label class="access-label" for="request-email">Your email</label>
           <input class="access-input" type="email" id="request-email" name="email"
-                 maxlength="200" autocomplete="email" placeholder="jane@university.edu" />
+                 maxlength="200" autocomplete="email" placeholder="@university.edu" />
 
-          <label class="field-label" for="request-affiliation">Affiliation (optional)</label>
+          <label class="access-label" for="request-affiliation">Affiliation (optional)</label>
           <input class="access-input" type="text" id="request-affiliation" name="affiliation"
                  maxlength="160" autocomplete="organization" placeholder="University or company" />
 
-          <label class="field-label" for="request-message">Why do you need it</label>
+          <label class="access-label" for="request-message">Why do you need it</label>
           <textarea class="access-textarea" id="request-message" name="message"
-                    maxlength="2000" placeholder="A sentence or two is plenty."></textarea>
+                    maxlength="2000" placeholder="In brief, the reason for access"></textarea>
 
                     <div class="honeypot" aria-hidden="true">
             <label for="request-website">Website</label>
@@ -149,12 +152,14 @@
         </form>
 
         <div class="access-status" id="request-status" role="status" aria-live="polite"></div>
-      </div>
 
-      <p class="access-note" style="text-align: center; font-size: 0.85rem;">
-        Prefer email? Write to
-        <a href="mailto:abhinav.utkarsh@tum.de">abhinav.utkarsh@tum.de</a> directly.
-      </p>
+                <p class="access-note access-privacy-note">
+          Your details are used only to handle this request and are never
+          shared. The stored copy is deleted automatically after 90 days; the
+          email itself stays in my mailbox until I delete it.
+          <a href="privacy.html">What happens to your data</a>
+        </p>
+      </div>
 
     </div>
   </section>
@@ -165,9 +170,13 @@
         <div class="column is-8">
           <div class="content">
             <p>
+              <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+              <a href="https://abhinavutkarsh.com/#/impressum" target="_blank" rel="noopener">Impressum</a>
+            </p>
+            <p>
               Built from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
-              <br> This website is licensed under a <a rel="license noopener" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-              Commons Attribution-ShareAlike 4.0 International License</a>.
+              <br> The page template is licensed under a <a rel="license noopener" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>. Thesis text, figures and videos &copy; 2026 Abhinav Utkarsh. Renderings derived from the NeRSemble dataset are used under its terms of use, for non-commercial research and educational purposes only.
             </p>
           </div>
         </div>

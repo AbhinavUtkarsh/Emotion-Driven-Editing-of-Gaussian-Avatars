@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="color-scheme" content="dark light">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
@@ -30,20 +31,14 @@
   rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
 </head>
 <body>
+
+    <div class="page-veil" id="page-veil" aria-hidden="true"></div>
+
 
   <button id="mode-toggle" aria-label="Switch dark/light mode">
     <span id="mode-icon" class="fas fa-sun"></span>
@@ -362,6 +357,15 @@
   month        = {February},
   url          = {https://abhinavutkarsh.com/Emotion-Driven-Editing-of-Gaussian-Avatars/},
   note         = {Visual Computing \&amp; Artificial Intelligence Lab}
+}
+
+@article{kirschstein2023nersemble,
+  title        = {NeRSemble: Multi-View Radiance Field Reconstruction of Human Heads},
+  author       = {Kirschstein, Tobias and Qian, Shenhan and Giebenhain, Simon and Walter, Tim and Nie{\ss}ner, Matthias},
+  journal      = {ACM Transactions on Graphics (TOG)},
+  volume       = {42},
+  number       = {4},
+  year         = {2023}
 }</code></pre>
   </div>
 </section>
@@ -374,9 +378,14 @@
         <div class="content">
 
           <p>
+            <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+            <a href="https://abhinavutkarsh.com/#/impressum" target="_blank" rel="noopener">Impressum</a>
+          </p>
+
+          <p>
             Built from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-           <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+           <br> The page template is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>. Thesis text, figures and videos &copy; 2026 Abhinav Utkarsh. Renderings derived from the NeRSemble dataset are used under its terms of use, for non-commercial research and educational purposes only.
           </p>
 
         </div>

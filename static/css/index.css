@@ -25,11 +25,17 @@ html {
 
 :root {
   color-scheme: dark;
+  background-color: #101010;
+  transition: background-color 0.5s ease;
 }
 
 body.light-mode,
 :root:has(body.light-mode) {
   color-scheme: light;
+}
+
+:root:has(body.light-mode) {
+  background-color: #ffffff;
 }
 
 body {
@@ -39,29 +45,58 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-@keyframes page-enter {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.page-veil {
+  position: fixed;
+  inset: 0;
+  background-color: #101010;
+  pointer-events: none;
+
+    z-index: 10000;
+  opacity: 0;
+
+    will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: strict;
+
+    opacity: 1;
+  animation: veil-fallback 340ms cubic-bezier(0.22, 1, 0.36, 1) 2.5s both;
 }
 
-@keyframes page-exit {
+.page-veil.is-ready {
+  animation: veil-out 340ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes veil-fallback {
   from { opacity: 1; }
   to   { opacity: 0; }
 }
 
-body.page-enter {
-  animation: page-enter 780ms cubic-bezier(0.22, 1, 0.36, 1) both;
+body.light-mode .page-veil {
+  background-color: #ffffff;
 }
 
-body.page-exit {
-  animation: page-exit 460ms cubic-bezier(0.4, 0, 1, 1) both;
-  pointer-events: none;
+.page-veil.is-leaving {
+  animation: veil-in 200ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+
+@keyframes veil-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes veil-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.page-enter,
-  body.page-exit {
+  .page-veil,
+  .page-veil.is-ready,
+  .page-veil.is-leaving {
     animation: none;
+    opacity: 0;
   }
 }
 
