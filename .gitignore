@@ -3,17 +3,17 @@ static/pdfs/
 *.pptx
 *.ppt
 
-worker/node_modules/
-worker/.wrangler/
-worker/.dev.vars
-node_modules/
-
 HANDOFF.md
 
 .dev.vars
 *.local
 .env
 .env.*
+worker/.dev.vars
+
+node_modules/
+worker/node_modules/
+worker/.wrangler/
 
 .DS_Store
 Thumbs.db

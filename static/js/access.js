@@ -4,7 +4,7 @@
   var CFG = window.EMOGA_ACCESS || {};
   var API = String(CFG.apiBase || '').replace(/\/+$/, '');
 
-    var UNLOCK_ITEMS = ['thesis', 'presentation'];
+  var UNLOCK_ITEMS = ['thesis', 'presentation'];
   var REQUEST_ITEMS = ['thesis', 'presentation', 'both'];
 
   var $ = function (id) { return document.getElementById(id); };
@@ -31,7 +31,7 @@
     }
   }
 
-    function readJson(response) {
+  function readJson(response) {
     return response.text().then(function (text) {
       if (!text) return {};
       try { return JSON.parse(text); } catch (e) { return {}; }
@@ -63,7 +63,7 @@
     });
   }
 
-    function describeFailure(result) {
+  function describeFailure(result) {
     var body = result.body || {};
     if (body.error) return body.error;
     if (result.status === 429) return 'Too many attempts. Please wait a little and try again.';
@@ -91,7 +91,6 @@
     if (REQUEST_ITEMS.indexOf(item) !== -1) $('request-item').value = item;
   }
 
-  
   function initUnlock() {
     var form = $('unlock-form');
     var button = $('unlock-submit');
@@ -130,7 +129,7 @@
             return;
           }
 
-                    passwordField.value = '';
+          passwordField.value = '';
 
           link.href = API + '/file?item=' + encodeURIComponent(item) +
                       '&token=' + encodeURIComponent(result.body.token);
@@ -145,7 +144,6 @@
     });
   }
 
-  
   function looksLikeEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
   }
@@ -160,7 +158,7 @@
 
   function resetTurnstile() {
     if (window.turnstile && typeof window.turnstile.reset === 'function') {
-      try { window.turnstile.reset(); } catch (e) {  }
+      try { window.turnstile.reset(); } catch (e) { }
     }
   }
 

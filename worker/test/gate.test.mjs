@@ -4,11 +4,11 @@ import { webcrypto as crypto } from 'node:crypto';
 
 import worker, { __test } from '../src/index.js';
 
-
 const ORIGIN = 'https://abhinavutkarsh.com';
 const EVIL = 'https://evil.example';
 const PASSWORD = 'correct horse battery staple';
-const ITERATIONS = 1000; 
+const ITERATIONS = 1000;
+
 function toHex(buf) {
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
@@ -170,7 +170,6 @@ async function unlock(env, item = 'thesis', password = PASSWORD, opts = {}) {
   return { res, body: await res.json().catch(() => ({})) };
 }
 
-
 PASSWORD_HASH = await derive(PASSWORD, SALT);
 
 beforeEach(() => {
@@ -179,7 +178,6 @@ beforeEach(() => {
   resendOk = true;
   installFetchMock();
 });
-
 
 describe('routing and CORS', () => {
   test('health check responds', async () => {

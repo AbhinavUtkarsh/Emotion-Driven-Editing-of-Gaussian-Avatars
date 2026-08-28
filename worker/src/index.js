@@ -1,4 +1,3 @@
-
 const ITEMS = {
   thesis: {
     key: 'thesis.pdf',
@@ -19,7 +18,6 @@ const REQUESTABLE = { thesis: 1, presentation: 1, both: 1 };
 
 const MAX_BODY_BYTES = 16 * 1024;
 const TOKEN_VERSION = 'v1';
-
 
 const encoder = new TextEncoder();
 
@@ -69,7 +67,6 @@ function positiveInt(value, fallback) {
   return Number.isFinite(n) && n > 0 ? n : fallback;
 }
 
-
 function allowedOrigins(env) {
   return String(env.ALLOWED_ORIGINS || '')
     .split(',')
@@ -105,7 +102,6 @@ function json(body, status, request, env, extraHeaders) {
   });
 }
 
-
 async function readJsonBody(request) {
   const type = request.headers.get('Content-Type') || '';
   if (!/^application\/json\b/i.test(type)) return null;
@@ -136,7 +132,8 @@ function field(value, maxLength) {
 function isValidEmail(value) {
   if (typeof value !== 'string') return false;
   if (value.length > 200) return false;
-  if (/[\r\n\t<>,;"\\]/.test(value)) return false;   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+  if (/[\r\n\t<>,;"\\]/.test(value)) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
 }
 
 function escapeHtml(value) {
@@ -147,7 +144,6 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 }
-
 
 function clientIp(request) {
   return (
@@ -194,7 +190,7 @@ async function recordFailure(env, key) {
       expirationTtl: LOCKOUT_WINDOW_SECONDS
     });
   } catch (e) {
-      }
+  }
 }
 
 async function clearFailures(env, key) {
@@ -202,9 +198,8 @@ async function clearFailures(env, key) {
   try {
     await env.RATE.delete(key);
   } catch (e) {
-      }
+  }
 }
-
 
 async function hmacKey(secret) {
   return crypto.subtle.importKey(
@@ -254,7 +249,6 @@ async function verifyToken(env, token, expectedItem) {
   return item === expectedItem;
 }
 
-
 function credentialsFor(env, item) {
   const suffix = item.toUpperCase();
   return {
@@ -290,7 +284,6 @@ async function passwordMatches(env, item, password) {
   return timingSafeEqual(new Uint8Array(derived), expected);
 }
 
-
 async function handleUnlock(request, env) {
   const body = await readJsonBody(request);
   if (!body) return json({ error: 'Malformed request.' }, 400, request, env);
@@ -298,7 +291,7 @@ async function handleUnlock(request, env) {
   const item = field(body.item, 40);
   const password = typeof body.password === 'string' ? body.password.slice(0, 200) : '';
 
-    const known = Object.prototype.hasOwnProperty.call(ITEMS, item);
+  const known = Object.prototype.hasOwnProperty.call(ITEMS, item);
 
   const key = await ipKey('unlock', request, env);
 
@@ -348,7 +341,7 @@ async function handleFile(request, env) {
 
   const spec = ITEMS[item];
 
-    const object = await env.FILES.get(spec.key, { range: request.headers });
+  const object = await env.FILES.get(spec.key, { range: request.headers });
   if (!object) {
     return json({ error: 'The file is not available right now.' }, 404, request, env);
   }
@@ -366,7 +359,7 @@ async function handleFile(request, env) {
     "attachment; filename*=UTF-8''" + encodeURIComponent(spec.filename)
   );
 
-    if (request.method === 'HEAD') {
+  if (request.method === 'HEAD') {
     headers.set('Content-Length', String(object.size));
     return new Response(null, { status: 200, headers: headers });
   }
@@ -389,7 +382,7 @@ async function handleRequestAccess(request, env) {
   const body = await readJsonBody(request);
   if (!body) return json({ error: 'Malformed request.' }, 400, request, env);
 
-    if (field(body.website, 200)) {
+  if (field(body.website, 200)) {
     return json({ ok: true }, 200, request, env);
   }
 
@@ -440,7 +433,7 @@ async function handleRequestAccess(request, env) {
 
   const sent = await sendRequestEmail(env, data);
 
-    await storeRequest(env, data, sent);
+  await storeRequest(env, data, sent);
 
   if (!sent) {
     return json(
@@ -467,9 +460,8 @@ async function storeRequest(env, data, emailSent) {
       { expirationTtl: REQUEST_LOG_TTL_SECONDS }
     );
   } catch (e) {
-      }
+  }
 }
-
 
 async function verifyTurnstile(env, token, ip) {
   if (!token) return false;
@@ -540,7 +532,6 @@ async function sendRequestEmail(env, data) {
   }
 }
 
-
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -564,7 +555,7 @@ export default {
         return json({ ok: true }, 200, request, env);
       }
     } catch (e) {
-            return json({ error: 'Unexpected error.' }, 500, request, env);
+      return json({ error: 'Unexpected error.' }, 500, request, env);
     }
 
     return json({ error: 'Not found.' }, 404, request, env);

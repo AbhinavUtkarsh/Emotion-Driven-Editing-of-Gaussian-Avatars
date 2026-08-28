@@ -1,14 +1,15 @@
 (function () {
   'use strict';
 
-  var EXIT_MS = 200; 
-    function pauseVideos() {
+  var EXIT_MS = 200;
+
+  function pauseVideos() {
     var videos = document.getElementsByTagName('video');
     for (var i = 0; i < videos.length; i++) {
       try {
         videos[i].pause();
       } catch (e) {
-              }
+      }
     }
   }
 
@@ -19,7 +20,7 @@
     );
   }
 
-    function getVeil() {
+  function getVeil() {
     var veil = document.getElementById('page-veil');
     if (veil) return veil;
     veil = document.createElement('div');
@@ -30,7 +31,7 @@
     return veil;
   }
 
-    function revealWhenReady(veil) {
+  function revealWhenReady(veil) {
     var done = false;
 
     function reveal() {
@@ -53,10 +54,10 @@
       window.addEventListener('load', afterFonts);
     }
 
-        window.setTimeout(reveal, 2500);
+    window.setTimeout(reveal, 2500);
   }
 
-    function shouldIntercept(link, event) {
+  function shouldIntercept(link, event) {
     if (event.defaultPrevented) return false;
     if (event.button !== 0) return false;
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return false;
@@ -75,12 +76,12 @@
     }
     if (url.origin !== window.location.origin) return false;
 
-        if (url.pathname === window.location.pathname && url.hash) return false;
+    if (url.pathname === window.location.pathname && url.hash) return false;
 
     return true;
   }
 
-    function arrivedFromThisSite() {
+  function arrivedFromThisSite() {
     if (!document.referrer) return false;
     try {
       var from = new URL(document.referrer);
@@ -93,7 +94,7 @@
     }
   }
 
-    function initBackButton(veil) {
+  function initBackButton(veil) {
     var back = document.querySelector('.back-button');
     if (!back || !arrivedFromThisSite()) return;
 
@@ -137,10 +138,10 @@
       }, EXIT_MS);
     });
 
-        window.addEventListener('pageshow', function (event) {
+    window.addEventListener('pageshow', function (event) {
       if (!event.persisted) return;
       veil.classList.remove('is-leaving');
-            veil.style.animation = 'none';
+      veil.style.animation = 'none';
       void veil.offsetWidth;
       veil.style.animation = '';
     });

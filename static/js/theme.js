@@ -5,14 +5,15 @@
     try {
       return window.localStorage.getItem(KEY);
     } catch (e) {
-      return null;     }
+      return null;
+    }
   }
 
   function store(value) {
     try {
       window.localStorage.setItem(KEY, value);
     } catch (e) {
-          }
+    }
   }
 
   function apply(isLight) {
@@ -21,7 +22,7 @@
     var icon = document.getElementById('mode-icon');
     if (!icon) return;
 
-        var replacement = document.createElement('i');
+    var replacement = document.createElement('i');
     replacement.id = 'mode-icon';
     replacement.setAttribute('class', isLight ? 'fas fa-moon' : 'fas fa-sun');
     icon.parentNode.replaceChild(replacement, icon);

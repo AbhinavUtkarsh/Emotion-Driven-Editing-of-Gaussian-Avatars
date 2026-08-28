@@ -19,9 +19,9 @@
 </head>
 <body>
 
-    <div class="page-veil" id="page-veil" aria-hidden="true"></div>
+  <div class="page-veil" id="page-veil" aria-hidden="true"></div>
 
-    <a class="back-button" href="index.html" aria-label="Back">
+  <a class="back-button" href="index.html" aria-label="Back">
     <span class="fas fa-arrow-left"></span>
   </a>
 
@@ -128,22 +128,22 @@
         supervisory authority.
       </p>
 
-      <p class="legal-copyright">&copy; 2024-2026 Abhinav Utkarsh</p>
+      <p class="legal-copyright">&copy; 2025-2026 Abhinav Utkarsh</p>
 
     </div>
   </section>
 
   <script>
-        (function () {
+    (function () {
       var back = document.querySelector('.back-button');
       if (!back || !document.referrer) return;
       try {
         var from = new URL(document.referrer);
         if (from.origin !== window.location.origin) return;
-        if (from.pathname === window.location.pathname) return; // came from here
+        if (from.pathname === window.location.pathname) return;
         back.href = from.href;
       } catch (e) {
-              }
+      }
     })();
   </script>
 
